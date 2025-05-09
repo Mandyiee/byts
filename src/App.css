@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama&display=swap');
+@import "tailwindcss";
+
+
+* {
+  font-family: "Georama", sans-serif;
+}
+
+:root {
+  --color-primary-darkest: #110E15;
+  --color-primary-darker: #2A0A11;
+  --color-primary-dark: #211720;
+  --color-primary: #411D2B;
+  --color-primary-accent: #430E18;
+
+  --color-component-background: #110e1550;
+  --color-text: #fdfdfd;
+  --color-accent: #430E18;
+  --color-border-component-background: #000000d2;
+  --color-section-highlight: #211720;
+}
+
+
+.grid-background {
+  background-image:
+    linear-gradient(to right, var(--color-primary-accent) 1px, transparent 1px 100px),
+    linear-gradient(to bottom, var(--color-primary-accent)  1px, transparent 1px 100px);
+  background-size:  100px 100px, 100px 100px;
+  background-color: #fff;
+}
+
+
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  cursor: ew-resize;
+  background: #FFF;
+  box-shadow: -605px 0 0 600px var(--color-accent);
+  border-radius: 50%;
+
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  /* Hide directional buttons */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  /* #411D2B */
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-accent);
+  /* #430E18 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary-darkest);
+  /* #110E15 */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: var(--color-primary-darkest);
+  /* #110E15 */
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--color-primary-darkest);
+  /* #110E15 */
+}
+
+::-webkit-resizer {
+  background-color: var(--color-primary-dark);
+  /* #2A0A11 */
+}
+
