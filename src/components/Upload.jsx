@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-
+import { X } from 'lucide-react';
 let config = {
   canvasWidth: 0,
   canvasHeight: 0,
-  backgroundColor: '',
+  backgroundColor: '#ffffff',
   invertColors: false,
   pixelEncoding: 'grayscale',
   threshold: 128,
@@ -109,8 +109,11 @@ const Upload = ({ setImages, images }) => {
     fileInputRef.current.click();
   };
 
+  const clearAllImages = () => {
+    
+  }
   return (
-    <div className="w-full h-fit shadow-xl bg-[var(--color-border-component-background)] mb-10 p-10 rounded-2xl backdrop-blur-sm">
+    <div className="w-full h-fit shadow-xl bg-[var(--color-border-component-background)] mb-10 p-6 md:p-10 rounded-2xl backdrop-blur-sm">
     <div className="">
       <div 
         className={`border-2 border-dashed  border-[var(--color-section-highlight)] rounded-lg p-6 w-full flex flex-col items-center justify-center cursor-pointer transition-colors ${
@@ -157,34 +160,49 @@ const Upload = ({ setImages, images }) => {
           multiple={true}
         />
       </div>
-  
-      <div className='overflow-x-auto mt-4 w-full'>
-        {images.length > 0 && (
-          <div className="flex justify-center items-center h-[100px] space-x-5 whitespace-nowrap">
-            {images.map((image, index) => (
-              <div key={index} className="relative inline-block group w-[45px] h-[45px]">
-                <img 
-                  src={image.url} 
-                  alt={image.name} 
-                  className="w-full h-full object-cover rounded-lg drop-shadow-lg border border-[var(--color-section-highlight)]"
-                />
-                <button 
-                  className="absolute flex items-center justify-center text-[var(--color-text)] bg-[var(--color-accent)] text-center rounded-full h-[20px] w-[20px] md:opacity-0 md:roup-hover:opacity-100 md:transition-opacity -top-2 -right-2 text-xs"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeImage(index);
-                  }}
-                >
-                  ×
-                </button>
-                <p className="mt-1 text-xs text-[var(--color-text)] opacity-80 truncate w-[45px]">
-                  {image.name}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <div className='flex my-4 md:mx-2 flex-col w-full'>
+  <div className='overflow-x-auto mt-4 w-full relative'>
+    {images.length > 0 && (
+      <>
+        <div className="flex items-center mb-2 justify-between">
+          <span className="text-sm text-white">
+            {images.length} {images.length === 1 ? 'image' : 'images'} selected
+          </span>
+          <button 
+            className='flex items-center gap-1 px-3 py-1 bg-[var(--color-accent)] text-center rounded-lg text-white text-sm hover:bg-opacity-90 transition-all' 
+            onClick={clearAllImages}
+          >
+            <X size={16} strokeWidth={2} />
+            Clear all
+          </button>
+        </div>
+        <div className="flex items-center h-[100px] space-x-5 whitespace-nowrap">
+          {images.map((image, index) => (
+            <div key={index} className="relative inline-block group w-[45px] h-[45px]">
+              <img
+                src={image.url}
+                alt={image.name}
+                className="w-full h-full object-cover rounded-lg drop-shadow-lg border border-[var(--color-section-highlight)]"
+              />
+              <button
+                className="absolute flex items-center justify-center text-[var(--color-text)] bg-[var(--color-accent)] text-center rounded-full md:h-[23px] w-[23px] md:opacity-0 md:group-hover:opacity-100 md:transition-opacity -top-2 -right-2 text-xl"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeImage(index);
+                }}
+              >
+                ×
+              </button>
+              <p className="mt-1 text-xs text-[var(--color-text)] opacity-80 truncate w-[45px]">
+                {image.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</div>
     </div>
   </div>
   );

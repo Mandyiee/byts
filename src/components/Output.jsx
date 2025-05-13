@@ -41,7 +41,7 @@ const Output = ({ code, results }) => {
   };
 
   return (
-    <div className="w-full border border-[var(--color-section-highlight)] rounded-2xl shadow-xl backdrop-blur-sm bg-[var(--color-border-component-background)] mt-10 overflow-hidden">
+    <div className="w-full border border-[var(--color-section-highlight)] rounded-2xl shadow-xl backdrop-blur-sm bg-[var(--color-border-component-background)] my-10 overflow-hidden">
     {/* Tab Navigation */}
     <div className="flex justify-center items-center border-b border-[var(--color-section-highlight)]">
       <button 

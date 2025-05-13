@@ -14,16 +14,15 @@ const colorModesCSS = {
   rgba8888: ''
 }
 
-export default function Config({ images, handleImagesInput, setImages, processing }) {
+export default function Config({ images, handleImagesInput, setImages, processing, imgStyling, setImgStyling }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
   const [allImagesSelected, setAllImagesSelected] = useState(true);
-  const [imgStyling, setImgStyling] = useState([]);
   const imageText = useRef();
 
   const [allImageSetting, setAllImageSetting] = useState({
     canvasWidth: 0,
     canvasHeight: 0,
-    backgroundColor: '',
+    backgroundColor: '#ffffff',
     invertColors: false,
     pixelEncoding: 'grayscale',
     threshold: 128,
@@ -76,7 +75,7 @@ export default function Config({ images, handleImagesInput, setImages, processin
       setCurrentSetting(updatedAllImageSetting);
 
       generateCSSStyling(updatedImages);
-      console.log(images);
+      //console.log(images);
     } else {
       // Update single image setting
       updateSingleImageSetting(settingName, value);
@@ -103,10 +102,10 @@ export default function Config({ images, handleImagesInput, setImages, processin
     setCurrentSetting(updatedSetting);
 
     generateCSSStyling(updatedImages);
-    console.log(images);
+   // console.log(images);
   };
 
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState('#ffffff');
 
 
 
@@ -157,7 +156,7 @@ export default function Config({ images, handleImagesInput, setImages, processin
           setSelectedColor("");
         }
         styleClasses += colorModesCSS[image.config.pixelEncoding] + " ";
-      }
+      }       
       tempStyling[index] = styleClasses.trim();
     });
 
@@ -184,7 +183,7 @@ export default function Config({ images, handleImagesInput, setImages, processin
     <div className="p-6 mx-auto w-full bg-[var(--color-border-component-background)] rounded-2xl shadow-xl backdrop-blur-sm my-10 border border-[var(--color-section-highlight)]">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-        <h2 className="text-2xl font-bold text-[var(--color-text)]">Image Configuration</h2>
+        <h2 className="text-2xl font-bold text-[var(--color-text)] text-center">Image Configuration</h2>
 
         <div className="flex items-center gap-4">
           <label htmlFor="allImage" className="flex items-center space-x-2 cursor-pointer">
@@ -228,7 +227,7 @@ export default function Config({ images, handleImagesInput, setImages, processin
                   onClick={() => handleSelectImage(index)}
                 >
                   <div className='flex flex-col items-center'>
-                    <div className='h-[120px] w-[120px] flex items-center justify-center rounded-md bg-[var(--color-component-background)]'>
+                    <div className='h-[120px] w-[120px] flex items-center justify-center rounded-md ' style={{backgroundColor: `${image.config.backgroundColor}`}}>
                       <img
                         src={image.url}
                         alt={image.name}
@@ -289,7 +288,7 @@ export default function Config({ images, handleImagesInput, setImages, processin
               </div>
             </div>
 
-            {currentSetting.pixelEncoding !== 'grayscale' && (
+
               <div className="space-y-4">
                 <label className="block text-sm font-medium text-[var(--color-text)] mb-1">
                   Background Color
@@ -297,16 +296,16 @@ export default function Config({ images, handleImagesInput, setImages, processin
                 <div className="flex items-center justify-center gap-3">
                   <input
                     type="color"
-                    value={selectedColor}
+                    value={currentSetting.backgroundColor || selectedColor}
                     onChange={handleBackgroundChange}
                     className="h-10 w-10 cursor-pointer rounded border border-[var(--color-accent)]"
                   />
                   <span className="text-sm text-[var(--color-text)] opacity-80">
-                    {selectedColor.toUpperCase()}
+                    {currentSetting.backgroundColor.toUpperCase() || selectedColor.toUpperCase()}
                   </span>
                 </div>
               </div>
-            )}
+          
           </div>
         </div>
 

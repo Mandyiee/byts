@@ -4,6 +4,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Config from './components/Config';
 import Output from './components/Output';
+import Info from './components/Info';
+import DisplaySimulator from './components/Simulation';
 
 //upload file
 //update configurations 
@@ -23,6 +25,7 @@ function App() {
   const [code, setCode] = useState("");
   const [results, setResults] = useState([]);
   
+  const [imgStyling, setImgStyling] = useState([]);
   
   const MAX_WORKERS = 4;
   const workerPool = useRef([]);
@@ -150,15 +153,14 @@ function App() {
   return (
     <div className='bg-[var(--color-section-highlight)] grid-background'>
     <Navbar />
+    <Info />
     <div className=''>
       
       <div className=' w-[90%] md:w-[80%] lg:w-[70%] mx-auto py-10'>
         <Upload setImages={setImages} images={images}/>
-        <Config images={images} handleImagesInput={handleImagesInput} setImages={setImages} processing={processing} />
+        <Config images={images} handleImagesInput={handleImagesInput} setImages={setImages} processing={processing} imgStyling={imgStyling} setImgStyling={setImgStyling}/>
         <Output code={code} ready={ready} results={results}/>
-        
-      
-     
+        <DisplaySimulator images={images} imgStyling={imgStyling} setImgStyling={setImgStyling}/>
       </div>
     </div>
     </div>

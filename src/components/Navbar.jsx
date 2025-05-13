@@ -11,7 +11,7 @@ export default function Navbar() {
           </div>
 
           <a 
-            href="https://github.com" 
+            href="https://github.com/Mandyiee/byts.git" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-[var(--color-text)] opacity-80 hover:opacity-100 transition-opacity"
