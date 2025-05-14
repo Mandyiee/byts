@@ -34,7 +34,7 @@ export default function DisplaySimulator({ images, imgStyling }) {
     if (images.length == 0) {
       return (
         <div className="flex items-center justify-center h-full">
-          <p style={{ color: '#000' }}>
+          <p className="text-[var(--color-text)]">
             Upload an icon to preview
           </p>
         </div>
@@ -220,11 +220,11 @@ export default function DisplaySimulator({ images, imgStyling }) {
         {/* Display Preview */}
         <div className="mb-4 overflow-auto py-4">
           <div
-            className="border rounded-lg mx-auto"
+            className="border bg-[var(--color-border-component-background)]  rounded-lg mx-auto"
             style={{
               width: `${displaySize.width}px`,
               height: `${displaySize.height}px`,
-              border: "1px solid var(--color-border-component-background)",
+              border: "1px solid var(--color-accent)",
               padding: "10px",
             }}
           >

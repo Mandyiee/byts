@@ -116,9 +116,9 @@ const Upload = ({ setImages, images }) => {
     <div className="w-full h-fit shadow-xl bg-[var(--color-border-component-background)] mb-10 p-6 md:p-10 rounded-2xl backdrop-blur-sm">
     <div className="">
       <div 
-        className={`border-2 border-dashed  border-[var(--color-section-highlight)] rounded-lg p-6 w-full flex flex-col items-center justify-center cursor-pointer transition-colors ${
+        className={`border-2 border-dashed  rounded-lg p-6 w-full flex flex-col items-center justify-center cursor-pointer transition-colors ${
           isDragging 
-            ? 'border-[var(--color-accent-accent)] bg-[var(--color-section-highlight)]' 
+            ? 'border-[var(--color-accent)] bg-[var(--color-section-highlight)]' 
             : 'border-[var(--color-accent)]'
         }`}
         onDragEnter={handleDragEnter}

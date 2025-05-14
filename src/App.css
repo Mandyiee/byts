@@ -22,11 +22,11 @@
 
 
 .grid-background {
-  background-image:
-    linear-gradient(to right, var(--color-primary-accent) 1px, transparent 1px 100px),
-    linear-gradient(to bottom, var(--color-primary-accent)  1px, transparent 1px 100px);
-  background-size:  120px 120px, 120px 120px;
-  background-color: #fff;
+ /* background-image:
+     linear-gradient(to right, var(--color-primary-accent) 1px, transparent 1px 180px),
+    linear-gradient(to bottom, var(--color-primary-accent)  1px, transparent 1px 180px);
+  background-size:  180px 180px, 180px 180px; */
+  background-color: #282828;
 }
 
 
