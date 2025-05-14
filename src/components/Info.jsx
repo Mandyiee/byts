@@ -88,7 +88,15 @@ export default function Info() {
           <li>RGB888 (24-bit)</li>
           <li>RGBA8888 (32-bit)</li>
         </ul>
+
+        <div>
+        <p className="py-4 text-white">
+          Note: Click on an image in the configuration tab to edit a single image.
+        </p>
       </div>
+      </div>
+
+      
 
       {/* Modal Footer */}
       <div 

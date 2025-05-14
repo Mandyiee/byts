@@ -63,7 +63,7 @@ function rgb565(data, name, width, height) {
     byteIndex++;
     bytesOnCurrentLine++;
 
-    if (bytesOnCurrentLine >= 8 && byteIndex < bufferLength) {
+    if (bytesOnCurrentLine >= 12 && byteIndex < bufferLength) {
       rgbData += ',\n  ';
       bytesOnCurrentLine = 0;
     } else if (byteIndex < bufferLength) {
