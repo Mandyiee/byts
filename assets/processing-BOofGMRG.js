@@ -2,7 +2,7 @@
   `;const o=Math.ceil(g/8)*s;let t=0,r=0;for(let h=0;h<s;h++)for(let i=0;i<g;i+=8){let u=0;for(let f=0;f<8;f++)if(i+f<g){const d=(h*g+i+f)*4;Math.round(.299*n[d]+.587*n[d+1]+.114*n[d+2])<69&&(u|=1<<7-f)}l+=`0x${u.toString(16).padStart(2,"0")}`,t++,r++,r>=16&&t<o?(l+=`,
   `,r=0):t<o&&(l+=", ")}return l+=`
 };`,{formattedCode:l}}function I(n,a,g,s){let e=`const uint16_t ${a}[] = {
-  `;const l=g*s;let c=0,o=0;for(let t=0;t<n.length;t+=4){let r=n[t]>>3,h=n[t+1]>>2,i=n[t+2]>>3,u=(r<<11|h<<5|i)>>>0;e+=`0x${(u&65535).toString(16).padStart(4,"0")}`,c++,o++,o>=8&&c<l?(e+=`,
+  `;const l=g*s;let c=0,o=0;for(let t=0;t<n.length;t+=4){let r=n[t]>>3,h=n[t+1]>>2,i=n[t+2]>>3,u=(r<<11|h<<5|i)>>>0;e+=`0x${(u&65535).toString(16).padStart(4,"0")}`,c++,o++,o>=12&&c<l?(e+=`,
   `,o=0):c<l&&(e+=", ")}return e+=`
 };`,{formattedCode:e}}function M(n,a,g,s){let e=`const uint32_t ${a}[] = {
   `;const l=g*s;let c=0,o=0;for(let t=0;t<n.length;t+=4){let r=n[t],h=n[t+1],i=n[t+2];const u=(r<<16|h<<8|i)>>>0;e+=`0x${u.toString(16).padStart(6,"0").padStart(8,"0")}`,c++,o++,o>=10&&c<l?(e+=`,
