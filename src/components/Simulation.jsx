@@ -85,23 +85,23 @@ export default function DisplaySimulator({ images, imgStyling }) {
 
       <div className="p-4">
         {/* Device Selection */}
-        <div className="mb-4 grid grid-cols-5 gap-2">
+        <div className="mb-4 flex flex-wrap justify-center mx-auto gap-2">
           {Object.keys(deviceProfiles).map(key => (
             <button
               key={key}
               onClick={() => handleDeviceSelect(key)}
-              className={`p-2 text-center rounded-lg text-sm flex flex-col items-center justify-center transition-all ${displayType === deviceProfiles[key].type && key !== "custom" ? "ring-2" : ""}`}
+              className={`py-2 px-4 text-center rounded-lg text-sm flex flex-col items-center justify-center transition-all ${displayType === deviceProfiles[key].type && key !== "custom" ? "ring-2" : ""}`}
               style={{
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-text)",
                 ringColor: "var(--color-accent)"
               }}
             >
-              {key === "oled128x64" && <Monitor size={16} className="mb-1" />}
-              {key === "lcd160x128" && <Smartphone size={16} className="mb-1" />}
-              {key === "eink200x200" && <Watch size={16} className="mb-1" />}
-              {key === "tft320x240" && <CircuitBoard size={16} className="mb-1" />}
-              {key === "custom" && <RefreshCw size={16} className="mb-1" />}
+              {key === "oled128x64" && <Monitor size={16} strokeWidth={1} className="mb-1" />}
+              {key === "lcd160x128" && <Smartphone size={16} className="mb-1" strokeWidth={1} />}
+              {key === "eink200x200" && <Watch size={16} className="mb-1" strokeWidth={1} />}
+              {key === "tft320x240" && <CircuitBoard size={16} className="mb-1" strokeWidth={1} />}
+              {key === "custom" && <RefreshCw size={16} className="mb-1" strokeWidth={1} />}
               <p className="whitespace-normal break-words">{deviceProfiles[key].name}</p>
             </button>
           ))}
