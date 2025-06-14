@@ -1,6 +1,6 @@
-# Bitez - Embedded Image Conversion Toolkit
+# byts - Embedded Image Conversion Toolkit
 
-Bitez is a high-performance image processing toolkit specifically designed for embedded systems developers. It converts images into optimized formats (RGB565, RGB888, RGBA8888, 1-bit grayscale, etc.) for microcontrollers, displays, and IoT devices. Built with Web Workers for blazing-fast processing, Bitez allows you to resize, transform, and optimize images before exporting them as production-ready C/C++ arrays.
+byts is a high-performance image processing toolkit specifically designed for embedded systems developers. It converts images into optimized formats (RGB565, RGB888, RGBA8888, 1-bit grayscale, etc.) for microcontrollers, displays, and IoT devices. Built with Web Workers for blazing-fast processing, byts allows you to resize, transform, and optimize images before exporting them as production-ready C/C++ arrays.
 
 ## Key Features
 
@@ -52,7 +52,7 @@ Bitez is a high-performance image processing toolkit specifically designed for e
 ## Installation & Usage
 
 ### Web Version
-Simply visit [bitez.](https) and start converting images instantly!
+Simply visit [byts.](https) and start converting images instantly!
 
 ### Local Development
 ```bash
@@ -65,7 +65,7 @@ npm run dev
 
 - **Batch Processing** – Convert multiple images at once
 - **Command Line Interface** – Integrate with build systems and automation
-- **API Access** – Incorporate Bitez into your development workflow
+- **API Access** – Incorporate byts into your development workflow
 - **Custom Format Plugins** – Extend functionality for specialized hardware
 
 ## License
